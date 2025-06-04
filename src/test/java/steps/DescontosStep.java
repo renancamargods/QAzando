@@ -8,24 +8,24 @@ public class DescontosStep {
 
     @Dado("^que estou no site da QAzando$")
     public void acessar_site_QAzando() {
-        System.out.println("Passou 1");
+        System.out.println("Passou 01");
 
     }
 
     @Quando("^eu preencher meu email$")
     public void eu_preencho_meu_email() {
-        System.out.println("Passou 2");
+        System.out.println("Passou 02");
     }
 
     @Quando("^clico no botão ganhar cupom$")
     public void clico_em_ganhar_cupom() {
-        System.out.println("Passou 3");
+        System.out.println("Passou 03");
 
     }
 
     @Entao("^mostra o código de desconto para o site$")
     public void eu_vejo_o_codigo_de_desconto() {
-        System.out.println("Passou 4");
+        System.out.println("Passou 04");
 
     }
 
