@@ -3,6 +3,7 @@ package steps;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -15,6 +16,7 @@ public class DescontosStep {
     @Dado("^que estou no site da QAzando$")
     public void acessar_site_QAzando() {
         driver.get("https://qazando.com.br/curso.html");
+        Assert.assertEquals("Não foi possível acessar a página!",true, driver.findElement(By.id("btn-ver-cursos")).isDisplayed());
     }
 
     @Quando("^eu preencher meu email$")
@@ -34,7 +36,7 @@ public class DescontosStep {
     @Entao("^mostra o código de desconto para o site$")
     public void eu_vejo_o_codigo_de_desconto() {
         String texto_cupom = driver.findElement(By.cssSelector("#cupom > h2 > span")).getText();
-        System.out.println("texto_cupom");
+        Assert.assertEquals("O cumpom está errado!","QAZANDO15OFF", texto_cupom);
 
 
         driver.quit();
