@@ -38,7 +38,6 @@ public class DescontosStep {
         String texto_cupom = driver.findElement(By.cssSelector("#cupom > h2 > span")).getText();
         Assert.assertEquals("O cumpom está errado!","QAZANDO15OFF", texto_cupom);
 
-
         driver.quit();
 
     }
