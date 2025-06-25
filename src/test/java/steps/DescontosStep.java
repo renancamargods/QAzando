@@ -6,12 +6,11 @@ import io.cucumber.java.pt.Quando;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import runner.RunCucumber;
 
-public class DescontosStep {
+public class DescontosStep extends RunCucumber {
 
-    WebDriver driver = new ChromeDriver();
+
 
     @Dado("^que estou no site da QAzando$")
     public void acessar_site_QAzando() {
@@ -38,7 +37,7 @@ public class DescontosStep {
         String texto_cupom = driver.findElement(By.cssSelector("#cupom > h2 > span")).getText();
         Assert.assertEquals("O cumpom está errado!","QAZANDO15OFF", texto_cupom);
 
-        driver.quit();
+
 
     }
 
